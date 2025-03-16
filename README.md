@@ -2,7 +2,8 @@
 Metody Programowania Równoległego
 
 running cpp demo
-bash```
+bash
+```
 cd cpp_demo
 bash compile_and_run.sh
 ```
