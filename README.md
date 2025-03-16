@@ -1,0 +1,2 @@
+# mpr
+Metody Programowania Równoległego
