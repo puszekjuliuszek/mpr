@@ -16,11 +16,8 @@ defmodule Worker do
   @impl true
   def handle_cast(:start, _) do
     IO.puts("[MYLOG] worker starts... #{inspect(self())}")
-
-    A = Matrex.random(100)
-    # Matrix.new(3, 4)
-    # B = Matrex.random(100)
-    # C = Matrex.add(A, B)
+    c = Matrex.random(100)
+    #what 20 operations???
 
     IO.puts("[MYLOG] worker starts finishes... #{inspect(self())}")
     Tail.send_result()
