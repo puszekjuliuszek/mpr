@@ -14,17 +14,14 @@ defmodule Worker do
   end
 
   @impl true
-  def handle_cast(:start, _) do
-    IO.puts("[MYLOG] worker starts... #{inspect(self())}")
-    c = Matrex.random(100)
-    #what 20 operations???
+  def handle_cast({:start, a, b}, _) do
+    c = Matrex.multiply(a, b)
 
-    IO.puts("[MYLOG] worker starts finishes... #{inspect(self())}")
-    Tail.send_result()
+    Tail.send_result(c)
     {:noreply, {}}
   end
 
-  def start(pid) do
-    GenServer.cast(pid, :start)
+  def start(pid, a, b) do
+    GenServer.cast(pid, {:start, a, b})
   end
 end

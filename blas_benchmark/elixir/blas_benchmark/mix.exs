@@ -7,6 +7,7 @@ defmodule BlasBenchmark.MixProject do
       version: "0.1.0",
       elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
+      escript: [main_module: BlasBenchmark],
       deps: deps()
     ]
   end
@@ -14,7 +15,7 @@ defmodule BlasBenchmark.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: {BlasBenchmark, []},
+      mod: {BlasBenchmark, System.argv()},
       extra_applications: [:logger]
     ]
   end
