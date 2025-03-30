@@ -1,0 +1,16 @@
+
+# build
+mpicxx -std=c++11 montecarlo.cpp -o build/montecarlo 
+
+
+# N = 100
+mpirun -np 4 ./build/montecarlo 10000 20
+
+# N = 150
+mpirun -np 4 ./build/montecarlo 100000 20
+
+# N = 200
+mpirun -np 4 ./build/montecarlo 1000000 20
+
+# N = 250
+mpirun -np 4 ./build/montecarlo 10000000 20
